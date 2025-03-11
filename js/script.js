@@ -65,4 +65,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Mobile menu toggle functionality
+    const menuToggle = document.getElementById('menuToggle');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    }
 });
