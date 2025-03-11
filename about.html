@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om oss - Byggkonsult AB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="mobile-friendly-header">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <h1>Byggkonsult AB</h1>
+                </div>
+                <div class="mobile-menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav id="mainNav" class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Hem</a></li>
+                        <li><a href="about.html">Om oss</a></li>
+                        <li><a href="service.html">Tjänster</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="documentation.html">Dokumentation</a></li>
+                        <li><a href="contact.html" class="btn-primary">Kontakta oss</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Rest of your about page content will go here -->
+
+    <script>
+        // Mobile menu toggle functionality
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

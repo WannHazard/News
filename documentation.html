@@ -10,21 +10,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="mobile-friendly-header">
         <div class="container">
-            <div class="logo">
-                <h1>Byggkonsult AB</h1>
+            <div class="header-wrapper">
+                <div class="logo">
+                    <h1>Byggkonsult AB</h1>
+                </div>
+                <div class="mobile-menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav id="mainNav" class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Hem</a></li>
+                        <li><a href="about.html">Om oss</a></li>
+                        <li><a href="service.html">Tjänster</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="documentation.html">Dokumentation</a></li>
+                        <li><a href="contact.html" class="btn-primary">Kontakta oss</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Hem</a></li>
-                    <li><a href="about.html">Om oss</a></li>
-                    <li><a href="service.html">Tjänster</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="documentation.html">Dokumentation</a></li>
-                    <li><a href="contact.html" class="btn-primary">Kontakta oss</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
