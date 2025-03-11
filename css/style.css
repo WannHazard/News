@@ -123,8 +123,11 @@ img {
 header {
     /* Safari-compatible header fixes */
     .mobile-friendly-header {
-        height: auto;
-        padding: 25px 0;
+        height: 30px;   
+        width: 100%;
+        position: fixed;
+        top: 0
+        padding: 15px 0;
         background-color: white;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         border-bottom: 3px solid var(--primary-color);
