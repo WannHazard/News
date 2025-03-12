@@ -36,6 +36,19 @@
             object-fit: cover;
         }
         
+        /* Eliminamos los estilos de superposición que no queremos mostrar */
+        .portfolio-overlay {
+            display: none; /* Ocultamos completamente el overlay */
+        }
+        
+        /* Ocultamos también los elementos dentro del overlay */
+        .portfolio-title,
+        .portfolio-category,
+        .portfolio-description,
+        .portfolio-link {
+            display: none;
+        }
+        
         .portfolio-overlay {
             position: absolute;
             bottom: 0;
@@ -209,67 +222,37 @@
                 <!-- Proyecto 1 -->
                 <div class="portfolio-item" data-category="renovering">
                     <img src="img/IMG_1581-scaled.jpeg" alt="Renovering av lägenhet" class="portfolio-image">
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Modern Lägenhet Renovering</h3>
-                        <p class="portfolio-category">Renovering</p>
-                        <p class="portfolio-description">Fullständig renovering av en 120 kvm lägenhet i centrala Stockholm med fokus på öppna ytor och modern design.</p>
-                        <a href="#" class="portfolio-link">Se detaljer</a>
-                    </div>
+                    <!-- Eliminamos el div portfolio-overlay y su contenido -->
                 </div>
                 
                 <!-- Proyecto 2 -->
                 <div class="portfolio-item" data-category="nybyggnation">
                     <img src="img/IMG_1974-scaled.jpeg" alt="Nybyggt hus" class="portfolio-image">
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Villa Sjöutsikt</h3>
-                        <p class="portfolio-category">Nybyggnation</p>
-                        <p class="portfolio-description">Nybyggt enfamiljshus med panoramautsikt över havet, energieffektiva lösningar och smart hemteknik.</p>
-                        <a href="#" class="portfolio-link">Se detaljer</a>
-                    </div>
+                    <!-- Eliminamos el div portfolio-overlay y su contenido -->
                 </div>
                 
                 <!-- Proyecto 3 -->
                 <div class="portfolio-item" data-category="inredning">
                     <img src="img/INV.eneby-interior-malning-efter.jpg" alt="Inredningsprojekt" class="portfolio-image">
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Skandinavisk Elegans</h3>
-                        <p class="portfolio-category">Inredning</p>
-                        <p class="portfolio-description">Inredningsprojekt för ett modernt kontor med fokus på skandinavisk design, funktionalitet och välbefinnande.</p>
-                        <a href="#" class="portfolio-link">Se detaljer</a>
-                    </div>
+                    <!-- Eliminamos el div portfolio-overlay y su contenido -->
                 </div>
                 
                 <!-- Proyecto 4 -->
                 <div class="portfolio-item" data-category="projektering">
                     <img src="img/floorplan.png" alt="Projekteringsplan" class="portfolio-image">
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Bostadsområde Solbacken</h3>
-                        <p class="portfolio-category">Projektering</p>
-                        <p class="portfolio-description">Omfattande projektering av ett nytt bostadsområde med 45 lägenheter, gemensamma utrymmen och grönområden.</p>
-                        <a href="#" class="portfolio-link">Se detaljer</a>
-                    </div>
+                    <!-- Eliminamos el div portfolio-overlay y su contenido -->
                 </div>
                 
                 <!-- Proyecto 5 -->
                 <div class="portfolio-item" data-category="renovering">
                     <img src="img/IMG_3904-scaled.jpg" alt="Badrumsrenovering" class="portfolio-image">
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Lyxigt Badrum</h3>
-                        <p class="portfolio-category">Renovering</p>
-                        <p class="portfolio-description">Totalrenovering av badrum med italiensk marmor, golvvärme och skräddarsydda lösningar för förvaring.</p>
-                        <a href="#" class="portfolio-link">Se detaljer</a>
-                    </div>
+                    <!-- Eliminamos el div portfolio-overlay y su contenido -->
                 </div>
                 
                 <!-- Proyecto 6 -->
                 <div class="portfolio-item" data-category="nybyggnation">
                     <img src="img/IMG_3933-scaled.jpg" alt="Kommersiell byggnad" class="portfolio-image">
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Kontorskomplex Centrum</h3>
-                        <p class="portfolio-category">Nybyggnation</p>
-                        <p class="portfolio-description">Nybyggt kontorskomplex med fokus på hållbarhet, flexibla arbetsytor och modern arkitektur.</p>
-                        <a href="#" class="portfolio-link">Se detaljer</a>
-                    </div>
+                    <!-- Eliminamos el div portfolio-overlay y su contenido -->
                 </div>
             </div>
         </div>
