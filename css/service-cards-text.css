@@ -1,0 +1,64 @@
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.service-card {
+    height: 100%;
+    padding: 40px;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+    text-align: center;
+    background-color: var(--light-color);
+    border: 1px solid var(--accent-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.service-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    text-shadow: none;
+}
+
+.service-card p {
+    margin-bottom: 15px;
+    text-shadow: none;
+}
+
+.service-card p:first-of-type {
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+.service-cta {
+    background-color: var(--light-color);
+    padding: 40px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.service-cta h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.service-cta .btn-primary {
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
