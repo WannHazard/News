@@ -1080,6 +1080,32 @@ footer {
         margin-top: 10px;
     }
 }
+/* Leon Digital footer styling */
+.powered-by {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.powered-by p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.leon-logo {
+    height: 40px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .powered-by {
+        flex-direction: column;
+    }
+}
 
 /* Add this to your :root variables */
 :root {
