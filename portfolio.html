@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Byggkonsult AB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para el portafolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(44, 62, 80, 0.9), transparent);
+            padding: 20px;
+            color: white;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+        
+        .portfolio-title {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            font-family: var(--font-heading);
+        }
+        
+        .portfolio-category {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+        
+        .portfolio-description {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .portfolio-link {
+            display: inline-block;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .portfolio-link:hover {
+            color: white;
+        }
+        
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .portfolio-filter {
+            padding: 8px 20px;
+            background-color: #f5f5f5;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .portfolio-filter.active,
+        .portfolio-filter:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .portfolio-details {
+            margin-top: 80px;
+        }
+        
+        .portfolio-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .portfolio-details-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .portfolio-details-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .portfolio-details-content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .portfolio-details-info {
+            margin-top: 30px;
+        }
+        
+        .portfolio-details-info-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .portfolio-details-info-label {
+            font-weight: 600;
+            min-width: 120px;
+        }
+        
+        @media (max-width: 992px) {
+            .portfolio-details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="mobile-friendly-header">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <h1>Byggkonsult AB</h1>
+                </div>
+                <div class="mobile-menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav id="mainNav" class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Hem</a></li>
+                        <li><a href="about.html">Om oss</a></li>
+                        <li><a href="service.html">Tjänster</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="documentation.html">Dokumentation</a></li>
+                        <li><a href="contact.html" class="btn-primary">Kontakta oss</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Våra Projekt</h1>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Utforska Våra Senaste Projekt</h2>
+            <p class="section-description">Vi är stolta över att presentera ett urval av våra mest framgångsrika projekt. Varje projekt representerar vårt engagemang för kvalitet, innovation och kundnöjdhet.</p>
+            
+            <div class="portfolio-filters">
+                <div class="portfolio-filter active" data-filter="all">Alla Projekt</div>
+                <div class="portfolio-filter" data-filter="renovering">Renovering</div>
+                <div class="portfolio-filter" data-filter="nybyggnation">Nybyggnation</div>
+                <div class="portfolio-filter" data-filter="inredning">Inredning</div>
+                <div class="portfolio-filter" data-filter="projektering">Projektering</div>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Proyecto 1 -->
+                <div class="portfolio-item" data-category="renovering">
+                    <img src="img/IMG_1581-scaled.jpeg" alt="Renovering av lägenhet" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Modern Lägenhet Renovering</h3>
+                        <p class="portfolio-category">Renovering</p>
+                        <p class="portfolio-description">Fullständig renovering av en 120 kvm lägenhet i centrala Stockholm med fokus på öppna ytor och modern design.</p>
+                        <a href="#" class="portfolio-link">Se detaljer</a>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 2 -->
+                <div class="portfolio-item" data-category="nybyggnation">
+                    <img src="img/IMG_1974-scaled.jpeg" alt="Nybyggt hus" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Villa Sjöutsikt</h3>
+                        <p class="portfolio-category">Nybyggnation</p>
+                        <p class="portfolio-description">Nybyggt enfamiljshus med panoramautsikt över havet, energieffektiva lösningar och smart hemteknik.</p>
+                        <a href="#" class="portfolio-link">Se detaljer</a>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 3 -->
+                <div class="portfolio-item" data-category="inredning">
+                    <img src="img/INV.eneby-interior-malning-efter.jpg" alt="Inredningsprojekt" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Skandinavisk Elegans</h3>
+                        <p class="portfolio-category">Inredning</p>
+                        <p class="portfolio-description">Inredningsprojekt för ett modernt kontor med fokus på skandinavisk design, funktionalitet och välbefinnande.</p>
+                        <a href="#" class="portfolio-link">Se detaljer</a>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 4 -->
+                <div class="portfolio-item" data-category="projektering">
+                    <img src="img/floorplan.png" alt="Projekteringsplan" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Bostadsområde Solbacken</h3>
+                        <p class="portfolio-category">Projektering</p>
+                        <p class="portfolio-description">Omfattande projektering av ett nytt bostadsområde med 45 lägenheter, gemensamma utrymmen och grönområden.</p>
+                        <a href="#" class="portfolio-link">Se detaljer</a>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 5 -->
+                <div class="portfolio-item" data-category="renovering">
+                    <img src="img/IMG_3904-scaled.jpg" alt="Badrumsrenovering" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Lyxigt Badrum</h3>
+                        <p class="portfolio-category">Renovering</p>
+                        <p class="portfolio-description">Totalrenovering av badrum med italiensk marmor, golvvärme och skräddarsydda lösningar för förvaring.</p>
+                        <a href="#" class="portfolio-link">Se detaljer</a>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 6 -->
+                <div class="portfolio-item" data-category="nybyggnation">
+                    <img src="img/IMG_3933-scaled.jpg" alt="Kommersiell byggnad" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Kontorskomplex Centrum</h3>
+                        <p class="portfolio-category">Nybyggnation</p>
+                        <p class="portfolio-description">Nybyggt kontorskomplex med fokus på hållbarhet, flexibla arbetsytor och modern arkitektur.</p>
+                        <a href="#" class="portfolio-link">Se detaljer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Har du ett projekt i åtanke?</h2>
+            <p>Vi hjälper dig att förverkliga dina visioner. Kontakta oss idag för en kostnadsfri konsultation.</p>
+            <a href="contact.html" class="btn-primary">Kontakta oss</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Byggkonsult AB</h3>
+                    <p>Med kompetens och erfarenhet levererar vi kvalitet från start till mål.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Snabblänkar</h4>
+                    <ul>
+                        <li><a href="index.html">Hem</a></li>
+                        <li><a href="about.html">Om oss</a></li>
+                        <li><a href="service.html">Tjänster</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="documentation.html">Dokumentation</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Kontakta oss</h4>
+                    <p>Storgatan 123<br>123 45 Stockholm</p>
+                    <p>Tel: 08-123 45 67<br>E-post: info@byggkonsult.se</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Byggkonsult AB. Alla rättigheter förbehållna.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menú móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            menuToggle.addEventListener('click', function() {
+                menuToggle.classList.toggle('active');
+                mainNav.classList.toggle('active');
+            });
+
+            // Filtros de portafolio
+            const filters = document.querySelectorAll('.portfolio-filter');
+            const items = document.querySelectorAll('.portfolio-item');
+            
+            filters.forEach(filter => {
+                filter.addEventListener('click', function() {
+                    // Remover clase activa de todos los filtros
+                    filters.forEach(f => f.classList.remove('active'));
+                    
+                    // Añadir clase activa al filtro seleccionado
+                    this.classList.add('active');
+                    
+                    // Obtener categoría seleccionada
+                    const selectedCategory = this.getAttribute('data-filter');
+                    
+                    // Filtrar proyectos
+                    items.forEach(item => {
+                        const itemCategory = item.getAttribute('data-category');
+                        
+                        if (selectedCategory === 'all' || selectedCategory === itemCategory) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 50);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    
+    <!-- Script del portafolio -->
+    <script src="js/portfolio.js"></script>
