@@ -9,6 +9,111 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .service-list {
+            margin: 40px 0;
+        }
+        
+        .service-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-item:last-child {
+            border-bottom: none;
+        }
+        
+        .service-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0;
+            font-size: 1.5rem;
+        }
+        
+        .service-item .subtitle {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-left: 10px;
+        }
+        
+        .service-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin: 30px 0;
+        }
+        
+        .collaboration-section {
+            padding: 60px 0;
+            background-color: var(--light-color);
+        }
+        
+        .collaboration-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        .collaboration-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+        
+        .collaboration-subtitle {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .collaboration-text {
+            margin-bottom: 20px;
+        }
+        
+        .documentation-section {
+            padding: 60px 0;
+        }
+        
+        .cta-section {
+            background-color: var(--primary-color);
+            padding: 60px 0;
+            color: white;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .collaboration-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .service-item .subtitle {
+                margin-left: 0;
+                margin-top: 5px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="mobile-friendly-header">
@@ -38,50 +143,79 @@
 
     <section class="page-header">
         <div class="container">
-            <h1>Våra Tjänster</h1>
+            <h1>Våra tjänster</h1>
         </div>
     </section>
 
     <section id="tjanster" class="services">
         <div class="container">
-            <h2>Våra Tjänster</h2>
-            <p class="services-intro">Vi erbjuder ett brett utbud av tjänster för att möta alla dina bygg- och renoveringsbehov. Med vår expertis och erfarenhet kan vi hantera projekt av alla storlekar, från små renoveringar till stora byggprojekt.</p>
-            
             <div class="service-list">
                 <div class="service-item">
                     <h3>Totalentreprenad</h3>
-                    <p class="subtitle">Vi sköter allt</p>
-                    <p class="description">Med vår totalentreprenad tar vi hand om hela projektet från början till slut. Du behöver bara berätta vad du vill ha, så fixar vi resten.</p>
+                    <p class="subtitle">- Vi sköter allt</p>
                 </div>
                 <div class="service-item">
                     <h3>Totalrenovering</h3>
-                    <p class="subtitle">Badrum</p>
-                    <p class="description">Vi renoverar ditt badrum från golv till tak, med fokus på kvalitet, funktion och design. Vi hjälper dig att skapa ett badrum som passar dina behov och önskemål.</p>
+                    <p class="subtitle">- Badrum</p>
                 </div>
                 <div class="service-item">
                     <h3>Totalrenovering</h3>
-                    <p class="subtitle">Kök</p>
-                    <p class="description">Köket är hemmets hjärta. Vi hjälper dig att skapa ett funktionellt och vackert kök som passar din livsstil och dina behov.</p>
+                    <p class="subtitle">- kök</p>
                 </div>
                 <div class="service-item">
                     <h3>Bygg – Renovering – Snickeri</h3>
-                    <p class="description">Vi utför alla typer av bygg- och renoveringsarbeten, från små reparationer till stora ombyggnationer. Våra skickliga snickare kan hjälpa dig med allt från inredning till speciallösningar.</p>
                 </div>
                 <div class="service-item">
                     <h3>Fasadrenovering</h3>
-                    <p class="description">Vi renoverar och underhåller fasader för att skydda din fastighet och förbättra dess utseende. Vi har erfarenhet av alla typer av fasadmaterial och kan hjälpa dig att välja rätt lösning för din fastighet.</p>
                 </div>
                 <div class="service-item">
                     <h3>Projektledning – Projektering – Anbud</h3>
-                    <p class="description">Vi erbjuder professionell projektledning, projektering och anbudshantering för att säkerställa att ditt projekt genomförs effektivt och enligt plan. Vi hjälper dig att hålla koll på budget, tidsplan och kvalitet.</p>
                 </div>
             </div>
             
-            <div class="service-cta">
-                <h3>Behöver du hjälp med ditt projekt?</h3>
-                <p>Kontakta oss idag för en kostnadsfri konsultation. Vi hjälper dig att hitta den bästa lösningen för just ditt projekt.</p>
-                <a href="contact.html" class="btn-primary">Kontakta oss</a>
+            <img src="img/service1.jpg" alt="Renovering service" class="service-image">
+        </div>
+    </section>
+
+    <section class="collaboration-section">
+        <div class="container">
+            <h2 class="collaboration-title">Hur samarbetar vi med dig?</h2>
+            
+            <div class="collaboration-content">
+                <div>
+                    <h3 class="collaboration-subtitle">Kunden och projektgruppen</h3>
+                </div>
+                <div>
+                    <p class="collaboration-text">Tillsammans skapar vi framgång. Vår projektledning bygger på nära samarbete med dig som kund. Genom att lyssna noga på dina behov och önskemål skapar vi en skräddarsydd lösning som passar just ditt projekt. Vår målsättning är att du ska känna dig trygg och nöjd under hela processen.</p>
+                    
+                    <p class="collaboration-text">Vi tror på att projektledning handlar om mer än bara fakta och siffror. För oss handlar det om att förstå människors behov och motivationer. Genom att använda vår emotionella intelligens skapar vi en positiv och engagerande arbetsmiljö där alla känner sig värdefulla. Detta bidrar till ökad motivation och bättre resultat för alla.</p>
+                    
+                    <p class="collaboration-text">Sammanfattningsvis, genom att kombinera rätt personal, rätta verktyg och en stark projektstrategi kan vi och vårt team tillsammans skapa värdefulla resultat.</p>
+                    
+                    <p class="collaboration-text">Vi anpassar oss efter dina behov och kan snabbt reagera på förändringar.</p>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <section class="documentation-section">
+        <div class="container">
+            <div class="collaboration-content">
+                <div>
+                    <h3 class="collaboration-subtitle">Rådgivning och dokumentation</h3>
+                </div>
+                <div>
+                    <p class="collaboration-text">Att renovera kan vara ett spännande projekt, men det kräver också noggrann planering och förberedelser. För att säkerställa att din renovering blir så smidig och framgångsrik som möjligt är det viktigt att ha rätt rådgivning och dokumentation på plats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Redo att starta ditt projekt?</h2>
+            <p>Kontakta oss idag för en kostnadsfri konsultation</p>
+            <a href="contact.html" class="btn-primary">Kontakta oss</a>
         </div>
     </section>
 
