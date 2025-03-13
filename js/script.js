@@ -59,11 +59,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
             
+            // reCAPTCHA validation
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (recaptchaResponse.length === 0) {
+                isValid = false;
+                alert('Vänligen bekräfta att du inte är en robot genom att slutföra reCAPTCHA.');
+            }
+            
             if (isValid) {
                 alert('Tack för ditt meddelande! Vi återkommer så snart som möjligt.');
                 contactForm.reset();
+                grecaptcha.reset();
             }
-        });
+        });}
     }
     
     // Mobile menu toggle functionality

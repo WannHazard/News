@@ -18,7 +18,30 @@
             padding: 15px 0;
             border-bottom: 1px solid var(--accent-color);
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            text-align: center;
+        }
+        
+        .service-item .subtitle {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .service-item {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .service-item .subtitle {
+                margin-left: 0;
+                margin-top: 5px;
+                text-align: center;
+            }
         }
         
         .service-item:last-child {
@@ -151,25 +174,21 @@
         <div class="container">
             <div class="service-list">
                 <div class="service-item">
-                    <h3>Totalentreprenad</h3>
-                    <p class="subtitle">- Vi sköter allt</p>
+                    <h3>1 Entreprenadupphandling B2B</h3>
+                    <p class="subtitle">- Business-to-Business</p>
                 </div>
                 <div class="service-item">
-                    <h3>Totalrenovering</h3>
-                    <p class="subtitle">- Badrum</p>
+                    <h3>2 Upphandlingskonsult B2B</h3>
                 </div>
                 <div class="service-item">
-                    <h3>Totalrenovering</h3>
-                    <p class="subtitle">- kök</p>
+                    <h3>3 Entreprenad Villa renovering B2C</h3>
+                    <p class="subtitle">- Business-to-Consumer<br>- Vi sköter kontrakt, samordningen och kontroller av samtliga hantverkare och leverantörer</p>
                 </div>
                 <div class="service-item">
-                    <h3>Bygg – Renovering – Snickeri</h3>
+                    <h3>4 Projektledning B2B-B2C</h3>
                 </div>
                 <div class="service-item">
-                    <h3>Fasadrenovering</h3>
-                </div>
-                <div class="service-item">
-                    <h3>Projektledning – Projektering – Anbud</h3>
+                    <h3>5 Företagsrepresentation</h3>
                 </div>
             </div>
             
@@ -179,7 +198,7 @@
 
     <section class="collaboration-section">
         <div class="container">
-            <h2 class="collaboration-title">Hur samarbetar vi med dig?</h2>
+            <h2 class="collaboration-title">En positiv och engagerande arbetsmiljö!</h2>
             
             <div class="collaboration-content">
                 <div>
@@ -191,8 +210,6 @@
                     <p class="collaboration-text">Vi tror på att projektledning handlar om mer än bara fakta och siffror. För oss handlar det om att förstå människors behov och motivationer. Genom att använda vår emotionella intelligens skapar vi en positiv och engagerande arbetsmiljö där alla känner sig värdefulla. Detta bidrar till ökad motivation och bättre resultat för alla.</p>
                     
                     <p class="collaboration-text">Sammanfattningsvis, genom att kombinera rätt personal, rätta verktyg och en stark projektstrategi kan vi och vårt team tillsammans skapa värdefulla resultat.</p>
-                    
-                    <p class="collaboration-text">Vi anpassar oss efter dina behov och kan snabbt reagera på förändringar.</p>
                 </div>
             </div>
         </div>
