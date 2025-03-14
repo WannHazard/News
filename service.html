@@ -17,123 +17,117 @@
         .service-item {
             padding: 15px 0;
             border-bottom: 1px solid var(--accent-color);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .service-item .subtitle {
-            font-weight: 600;
-            color: var(--accent-color);
-            margin-top: 10px;
-            text-align: center;
-        }
-        
-        @media (max-width: 768px) {
-            .service-item {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .service-item .subtitle {
-                margin-left: 0;
-                margin-top: 5px;
-                text-align: center;
-            }
+            display: block;
         }
         
         .service-item:last-child {
             border-bottom: none;
         }
         
-        .service-item h3 {
+        .service-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: flex-start;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
+        }
+        
+        .service-header h3 {
             color: var(--primary-color);
             margin-bottom: 0;
             font-size: 1.5rem;
+            width: auto;
+            margin-right: 15px;
         }
         
-        .service-item .subtitle {
+        .service-header .subtitle {
             font-weight: 600;
             color: var(--accent-color);
-            margin-left: 10px;
+            margin-top: 5px;
+            width: auto;
+            text-align: left;
         }
         
-        .service-image {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin: 30px 0;
+        .toggle-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: var(--accent-color);
+            transition: transform 0.3s ease;
         }
         
-        .collaboration-section {
-            padding: 60px 0;
-            background-color: var(--light-color);
+        .service-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            padding: 0 15px 0 30px;
+            margin-left: 20px;
         }
         
-        .collaboration-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 40px;
-            align-items: start;
+        .service-item.active .service-content {
+            max-height: 2000px;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
         
-        .collaboration-title {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+        .service-item.active .toggle-icon {
+            transform: translateY(-50%) rotate(45deg);
+        }
+        
+        .service-content h4 {
             color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 15px;
+            text-align: left;
         }
         
-        .collaboration-subtitle {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
+        .service-content h5 {
+            color: var(--secondary-color);
+            margin-top: 15px;
+            margin-bottom: 10px;
+            text-align: left;
         }
         
-        .collaboration-text {
-            margin-bottom: 20px;
+        .service-content ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            text-align: left;
         }
         
-        .documentation-section {
-            padding: 60px 0;
+        .service-content ul li {
+            margin-bottom: 5px;
+            text-align: left;
         }
         
-        .cta-section {
-            background-color: var(--primary-color);
-            padding: 60px 0;
-            color: white;
-            text-align: center;
-            margin-top: 40px;
-        }
-        
-        .cta-section h2 {
-            color: white;
-            margin-bottom: 20px;
-        }
-        
-        .cta-section .btn-primary {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            font-weight: bold;
-            padding: 15px 30px;
-            font-size: 1.1rem;
+        .service-content p {
+            text-align: left;
         }
         
         @media (max-width: 768px) {
-            .collaboration-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .service-item {
+            .service-header {
                 flex-direction: column;
                 align-items: flex-start;
             }
             
-            .service-item .subtitle {
+            .toggle-icon {
+                position: absolute;
+                right: 10px;
+                top: 15px;
+                transform: none;
+            }
+            
+            .service-item.active .toggle-icon {
+                transform: rotate(45deg);
+            }
+            
+            .service-content {
                 margin-left: 0;
-                margin-top: 5px;
+                padding-left: 15px;
             }
         }
     </style>
@@ -174,21 +168,91 @@
         <div class="container">
             <div class="service-list">
                 <div class="service-item">
-                    <h3>1 Entreprenadupphandling B2B</h3>
-                    <p class="subtitle">- Business-to-Business</p>
+                    <div class="service-header">
+                        <h3>1 Entreprenadupphandling B2B</h3>
+                        <p class="subtitle">- Business-to-Business</p>
+                        <div class="toggle-icon">+</div>
+                    </div>
+                    <div class="service-content">
+                        <p>Entreprenadupphandling B2B är en affärsprocess där ett företag (beställaren) upphandlar entreprenadtjänster från ett annat företag (entreprenören).</p>
+                        
+                        <h4>Viktiga aspekter</h4>
+                        <h5>Avtalets betydelse:</h5>
+                        <p>Ett välstrukturerat avtal är grundläggande. Det bör inkludera:</p>
+                        <ul>
+                            <li>Arbetets omfattning och specifikationer.</li>
+                            <li>Tidsplaner och deadlines.</li>
+                            <li>Pris och betalningsvillkor.</li>
+                            <li>Ansvarsfördelning mellan parterna.</li>
+                            <li>Garantier och försäkringar.</li>
+                            <li>Eventuella sanktioner vid avtalsbrott.</li>
+                        </ul>
+                        <p>Standardavtal som AB 04 och ABT 06 används ofta som grund, men anpassas efter projektets unika behov.</p>
+                        
+                        <h5>Strategisk rådgivning</h5>
+                        <ul>
+                            <li>Utvecklar upphandlingsstrategier som stödjer företagets affärsmål.</li>
+                            <li>Genomför marknadsanalyser för att identifiera optimala leverantörer.</li>
+                        </ul>
+                        
+                        <h5>Genomförande av upphandlingsprocessen:</h5>
+                        <ul>
+                            <li>Utformar detaljerade förfrågningsunderlag och anbudsförfrågningar.</li>
+                            <li>Utvärderar inkommande anbud och leder avtalsförhandlingar.</li>
+                            <li>Säkerställer en effektiv och transparent upphandlingsprocess.</li>
+                        </ul>
+                        
+                        <h5>Avtalsförhandling och utformning:</h5>
+                        <ul>
+                            <li>Förhandlar fram fördelaktiga avtal som skyddar företagets intressen.</li>
+                            <li>Säkerställer att avtal är tydliga, detaljerade och juridiskt korrekta.</li>
+                        </ul>
+                        
+                        <h5>Riskhantering:</h5>
+                        <ul>
+                            <li>Identifierar och analyserar potentiella risker i upphandlingsprocessen.</li>
+                            <li>Utvecklar strategier för att minimera risker och maximera värdeskapande.</li>
+                        </ul>
+                        
+                        <h5>Leverantörsrelationer:</h5>
+                        <ul>
+                            <li>Etablerar och underhåller starka och hållbara relationer med leverantörer.</li>
+                        </ul>
+                        
+                        <p>Vi är er strategiska B2B-partner som hjälper er att optimera inköp och upphandlingar för att uppnå långsiktiga affärsmål och ökad konkurrenskraft.</p>
+                        <p>Kontakta oss och gör bättre affärer redan idag!</p>
+                    </div>
                 </div>
+                
                 <div class="service-item">
-                    <h3>2 Upphandlingskonsult B2B</h3>
+                    <div class="service-header">
+                        <h3>2 Entreprenad Villa renovering B2C</h3>
+                        <p class="subtitle">- Business-to-Consumer (För privat kunder)</p>
+                        <div class="toggle-icon">+</div>
+                    </div>
+                    <div class="service-content">
+                        <p>Vi tar fram förfrågningsunderlaget, upprättar kontrakt, samordnar och kontrollerar föreslagna hantverkares ekonomi och kontrollerar att skatter och försäkringar är inbetalda och aktuella.</p>
+                        
+                        <p>Vi erbjuder en komplett entreprenadtjänst som omfattar alla steg från förfrågningsunderlag till signerat avtal med vald entreprenör. Vi tar fram detaljerade förfrågningsunderlag, upprättar juridiskt korrekta kontrakt, samordnar och kvalitetssäkrar föreslagna hantverkare genom ekonomisk kontroll och verifiering av inbetalda skatter, samt genomför upphandlingar med leverantörer.</p>
+                        
+                        <p>Vi är er helhetsleverantör för en trygg och effektiv entreprenad.</p>
+                    </div>
                 </div>
+                
                 <div class="service-item">
-                    <h3>3 Entreprenad Villa renovering B2C</h3>
-                    <p class="subtitle">- Business-to-Consumer<br>- Vi sköter kontrakt, samordningen och kontroller av samtliga hantverkare och leverantörer</p>
-                </div>
-                <div class="service-item">
-                    <h3>4 Projektledning B2B-B2C</h3>
-                </div>
-                <div class="service-item">
-                    <h3>5 Företagsrepresentation</h3>
+                    <div class="service-header">
+                        <h3>3 Projektledning B2B - B2C</h3>
+                        <div class="toggle-icon">+</div>
+                    </div>
+                    <div class="service-content">
+                        <p>Vi sköter projektledningen under entreprenadtid och ser till att alla delar uppfylls enligt upprättad avtal.</p>
+                        
+                        <p>Vi erbjuder en heltäckande projektledningstjänst under hela entreprenadtiden, utformad för att säkerställa att varje aspekt av det upprättade avtalet uppfylls med högsta precision. Vårt engagemang sträcker sig från den initiala planeringen till den slutliga leveransen, där vi agerar som er betrodda partner för att navigera i komplexiteten av entreprenadprojekt. Vi tar ansvar för att samordna alla involverade parter, inklusive underleverantörer, leverantörer och andra intressenter, för att säkerställa en sömlös och effektiv genomförande.</p>
+                        
+                        <p>Vår projektledning omfattar noggrann övervakning av tidsplaner, budgetar och kvalitetskontroller. Vi använder beprövade metoder och verktyg för att säkerställa att projektet fortlöper enligt plan och att eventuella avvikelser hanteras proaktivt. Vi förstår vikten av tydlig och kontinuerlig kommunikation och ser till att alla parter hålls informerade om projektets framsteg. Vårt mål är att skapa en trygg och transparent process där ni som kund kan känna er fullständigt informerade och delaktiga.</p>
+                        
+                        <p>Genom vår expertis inom projektledning minimerar vi risker och säkerställer att projektet levereras i tid och inom budget. Vi är er garant för att alla avtalsenliga åtaganden uppfylls, vilket ger er trygghet och möjlighet att fokusera på er kärnverksamhet. Vi strävar efter att bygga långsiktiga relationer med våra kunder genom att leverera resultat som överträffar förväntningarna.</p>
+                    </div>
                 </div>
             </div>
             
@@ -269,5 +333,150 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Service item toggle functionality
+            const serviceItems = document.querySelectorAll('.service-item');
+            
+            serviceItems.forEach(item => {
+                const header = item.querySelector('.service-header');
+                
+                header.addEventListener('click', function() {
+                    // Toggle active class on the clicked item
+                    item.classList.toggle('active');
+                    
+                    // Close other items when one is opened
+                    serviceItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
+</html>
+<style>
+    .service-list {
+        margin: 40px 0;
+    }
+    
+    .service-item {
+        padding: 15px 0;
+        border-bottom: 1px solid var(--accent-color);
+        display: block;
+    }
+    
+    .service-item:last-child {
+        border-bottom: none;
+    }
+    
+    .service-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        cursor: pointer;
+        position: relative;
+        text-align: left;
+    }
+    
+    .service-header h3 {
+        color: var(--primary-color);
+        margin-bottom: 0;
+        font-size: 1.5rem;
+        width: auto;
+        margin-right: 15px;
+    }
+    
+    .service-header .subtitle {
+        font-weight: 600;
+        color: var(--accent-color);
+        margin-top: 5px;
+        width: auto;
+        text-align: left;
+    }
+    
+    .toggle-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        color: var(--accent-color);
+        transition: transform 0.3s ease;
+    }
+    
+    .service-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        padding: 0 15px 0 30px;
+        margin-left: 20px;
+    }
+    
+    .service-item.active .service-content {
+        max-height: 2000px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    .service-item.active .toggle-icon {
+        transform: translateY(-50%) rotate(45deg);
+    }
+    
+    .service-content h4 {
+        color: var(--primary-color);
+        margin-top: 20px;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    
+    .service-content h5 {
+        color: var(--secondary-color);
+        margin-top: 15px;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    
+    .service-content ul {
+        list-style: disc;
+        padding-left: 20px;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    
+    .service-content ul li {
+        margin-bottom: 5px;
+        text-align: left;
+    }
+    
+    .service-content p {
+        text-align: left;
+    }
+    
+    @media (max-width: 768px) {
+        .service-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .toggle-icon {
+            position: absolute;
+            right: 10px;
+            top: 15px;
+            transform: none;
+        }
+        
+        .service-item.active .toggle-icon {
+            transform: rotate(45deg);
+        }
+        
+        .service-content {
+            margin-left: 0;
+            padding-left: 15px;
+        }
+    }
+</style>
 </html>
