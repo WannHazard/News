@@ -167,7 +167,7 @@
     <section id="tjanster" class="services">
         <div class="container">
             <div class="service-list">
-                <div class="service-item">
+                <div class="service-item" id="service1">
                     <div class="service-header">
                         <h3>1 Entreprenadupphandling B2B</h3>
                         <p class="subtitle">- Business-to-Business</p>
@@ -224,7 +224,7 @@
                     </div>
                 </div>
                 
-                <div class="service-item">
+                <div class="service-item" id="service2">
                     <div class="service-header">
                         <h3>2 Entreprenad Villa renovering B2C</h3>
                         <p class="subtitle">- Business-to-Consumer (För privat kunder)</p>
@@ -239,7 +239,7 @@
                     </div>
                 </div>
                 
-                <div class="service-item">
+                <div class="service-item" id="service3">
                     <div class="service-header">
                         <h3>3 Projektledning B2B - B2C</h3>
                         <div class="toggle-icon">+</div>
@@ -375,6 +375,25 @@
                     });
                 });
             });
+            
+            // Check if there's a hash in the URL and open the corresponding service item
+            if (window.location.hash) {
+                const targetServiceItem = document.querySelector(window.location.hash);
+                if (targetServiceItem) {
+                    // Close any open items first
+                    serviceItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Open the target item
+                    targetServiceItem.classList.add('active');
+                    
+                    // Scroll to the item with a slight delay to ensure proper positioning
+                    setTimeout(() => {
+                        targetServiceItem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 300);
+                }
+            }
         });
     </script>
 </body>
